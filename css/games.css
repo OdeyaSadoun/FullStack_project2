@@ -26,12 +26,12 @@ div.one-quarter-last {
 img {
 	max-width: 100%;
 	height: 280px;
-    width: 280px;
+	width: 280px;
 	margin: 0 10px 10px 0;
-    border: solid 3px #fff;
+	border: solid 3px #fff;
 }
 
 h3.head-game {
-    text-align: center;
-    margin-top: 0;
+	text-align: center;
+	margin-top: 0;
 }

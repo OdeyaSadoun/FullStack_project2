@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-#text {
+.hellotext {
   width: 50%;
-  margin: 60px auto;
+  margin: 50px auto;
   height: auto;
   text-align: center;
-  line-height: 35px;
+  line-height: 10px;
   font-size: 20px;
   color: rgb(52, 92, 92);
   flex: 1;

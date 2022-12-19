@@ -18,33 +18,33 @@
     <form action="login.html" target="_blank">
         <ul>
             <li>
-                <label for="name"><b>שם פרטי:</b></label>
-                <input type="text" placeholder="הכנס את השם הפרטי שלך" name="email" required>
+                <label for="first_name"><b>שם פרטי:</b></label>
+                <input class="text" type="text" placeholder="הכנס את השם הפרטי שלך" id="first_name" name="first_name" required>
             </li>
 
             <li>
                 <label for="last_name"><b>שם משפחה:</b></label>
-                <input type="text" placeholder="הכנס את שם המשפחה שלך" name="email" required>
+                <input class="text" type="text" placeholder="הכנס את שם המשפחה שלך" name="last_name" required>
             </li>
 
             <li>
                 <label for="phone"><b>מספר פלאפון:</b></label>
-                <input type="text" placeholder="הכנס את מספר הפלאפון שלך" name="email" required>
+                <input class="text"  type="tel" id="phone" name="phone" placeholder="XXX-XXXXXXX" pattern="[0-9]{3}-[0-9]{7}" required>
             </li>
 
             <li>
                 <label for="email"><b>אי-מייל:</b></label>
-                <input type="text" placeholder="הכנס את האי-מייל שלך" name="email" required>
+                <input class="text" type="email" placeholder="הכנס את האי-מייל שלך" id="email" name="email" required>
             </li>
             
             <li>
                 <label for="password"><b>בחר סיסמא:</b></label>
-                <input type="text" placeholder="הכנס את הסיסמא שלך" name="psw" required>
+                <input class="text" type="password" placeholder="הכנס את הסיסמא שלך" id="password" name="password" required>
             </li>
 
             <li>
-                <label for="password"><b>אמת את הסיסמא שלך:</b></label>
-                <input type="text" placeholder="הכנס שוב את הסיסמא שלך" name="psw" required>
+                <label for="re_password"><b>אמת את הסיסמא שלך:</b></label>
+                <input class="text" type="password" placeholder="הכנס שוב את הסיסמא שלך" id="re_password" name="re_password" required>
             </li>
 
             <li>

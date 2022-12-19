@@ -1,23 +1,26 @@
-body{
-    direction: rtl;
-    background-color:rgb(224, 245, 245);
-  }
+* {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-  Body{
-    background-image:url(bunga.jpg);
-    background-size:cover;
-    background-attachment: fixed; }
-    p{ color:white; }
+body {
+  direction: rtl;
+  background-color: rgb(224, 245, 245);
+  background-image: url(bunga.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+}
 
-    
-header h1{
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-align: center;
-    font-size:1.7cm;
-    color:rgb(52, 92, 92);
-    width: 100%;
-    height: 220px;
-    background-image: url('https://img.lovepik.com//back_pic/05/61/93/355b4dff1c4d9e0.jpg_wh860.jpg');
-    margin: 0;
-    line-height: 170px;
+p {
+  color: white;
+}
+
+
+header h1 {
+  text-align: center;
+  font-size: 1.7cm;
+  color: rgb(52, 92, 92);
+  width: 100%;
+  height: 220px;
+  margin: 0;
+  line-height: 170px;
 }

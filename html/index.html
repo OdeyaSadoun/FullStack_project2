@@ -21,52 +21,11 @@
     </p>
 
     <!-- A button to open the popup form -->
-    <button class="login-button" onclick="openFormLogin()">כניסה</button>
-    <button class="registration-button" onclick="openFormRegistration()">הרשמה</button>
+    <a href="../html/login.html">
+    <button class="login-button" onclick="">כניסה</button></a>
+    <a href="../html/registration.html">
+    <button class="registration-button" onclick="openFormRegistration()">הרשמה</button></a>
 
-    <!-- The form -- כניסה -->
-    <div class="form-popup-login" id="myFormLogin">
-        <form action="/action_page.php" class="form-container-login">
-            <h1>כניסה</h1>
-
-            <label for="email"><b>אי-מייל:</b></label>
-            <input type="text" placeholder="הכנס את האי-מייל שלך" name="email" required>
-
-            <label for="psw"><b>סיסמא:</b></label>
-            <input type="password" placeholder="הכנס את הסיסמא שלך" name="psw" required>
-
-            <button type="submit" class="login">כניסה</button>
-            <button type="button" class="login-cancel" onclick="closeFormLogin()">סגור</button>
-        </form>
-    </div>
-
-    <!-- The form enrollment -- הרשמה -->
-    <div class="form-popup-registration" id="myFormRegistration">
-        <form action="/action_page.php" class="form-container-registration">
-            <h1>הרשמה</h1>
-
-            <label for="name"><b>שם פרטי:</b></label>
-            <input type="text" placeholder="הכנס את השם הפרטי שלך" name="email" required>
-
-            <label for="last_name"><b>שם משפחה:</b></label>
-            <input type="text" placeholder="הכנס את שם המשפחה שלך" name="email" required>
-
-            <label for="phone"><b>מספר פלאפון:</b></label>
-            <input type="text" placeholder="הכנס את מספר הפלאפון שלך" name="email" required>
-
-            <label for="email"><b>אי-מייל:</b></label>
-            <input type="text" placeholder="הכנס את האי-מייל שלך" name="email" required>
-
-            <label for="password"><b>בחר סיסמא:</b></label>
-            <input type="text" placeholder="הכנס את הסיסמא שלך" name="psw" required>
-
-            <label for="password"><b>אמת את הסיסמא שלך:</b></label>
-            <input type="text" placeholder="הכנס שוב את הסיסמא שלך" name="psw" required>
-
-            <button type="submit" class="btn">אישור</button>
-            <button type="button" class="btn cancel" onclick="closeFormRegistration()">סגור</button>
-        </form>
-    </div>
     <script src="../js/index.js">  
     </script>
 </body>

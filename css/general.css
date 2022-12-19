@@ -3,6 +3,13 @@ body{
     background-color:rgb(224, 245, 245);
   }
 
+  Body{
+    background-image:url(bunga.jpg);
+    background-size:cover;
+    background-attachment: fixed; }
+    p{ color:white; }
+
+    
 header h1{
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-align: center;

@@ -1,7 +1,6 @@
 /* Body Content */
 div.body-content {
 	padding: 50px 0;
-	background-color: #FFF;
 }
 
 /* quarters */
@@ -29,4 +28,10 @@ img {
 	height: 280px;
     width: 280px;
 	margin: 0 10px 10px 0;
+    border: solid 3px #fff;
+}
+
+h3.head-game {
+    text-align: center;
+    margin-top: 0;
 }

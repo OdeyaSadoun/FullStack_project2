@@ -1,0 +1,3 @@
+function alertComingSoon(){
+    alert('בקרוב!!!!');
+}

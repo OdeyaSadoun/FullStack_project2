@@ -1,0 +1,50 @@
+
+h2{
+    text-align: center;
+}
+
+.div_form{
+    width:400px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+form ul{
+    padding-right: 0;
+}
+
+form li{
+    list-style: none;
+    padding-bottom: 20px;
+    display: flex;
+}
+
+form li label{
+    padding-left: 5px;
+}
+
+form li input, textarea{
+    flex: 1;
+}
+
+form li a{
+    background-color: rgb(146, 146, 146);
+    border: 1px solid black;
+    color: white;
+    text-align: center;
+    flex: 0.4;
+    margin-right: auto;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+#_checkbox{
+    flex:none;
+    padding-left: 5px;
+}
+
+#submit{
+    flex: 0.4;
+    margin-right: auto;
+    margin-left: auto;
+}

@@ -36,7 +36,7 @@ h3.head-game,
 }
 
 .back_option {
-	position: fixed;
 	right: 10px;
 	top: 5px;
+	display: inline-block; 
 }

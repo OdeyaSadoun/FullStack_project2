@@ -13,13 +13,18 @@
 </head>
 
 <body>
-    <header class="back_option">
-        <a href="../html/index.html">יציאה</a>
-        <a href="../html/games.html">חזרה לעמוד המשחקים</a>
+    <header class="header">
+        <div>
+            <a class="back_option" href="../html/index.html">יציאה</a>
+            <a class="back_option" href="../html/games.html">חזרה לעמוד המשחקים</a>
+            <span id='username'></span>
+        </div>
+
         <div class="welcome_game">
-            <h1>משחקי למידה</h1>
+            <h1>משחקי למידה שלב 1</h1>
         </div>
     </header>
+
     <h2>שלב 1</h2>
     <div class="dropdown">
         <button id="stages" class="dropbtn" onclick="showDropdown()">שלבים</button>
@@ -31,7 +36,7 @@
     </div>
     <div class="grid-continer" id="grid-continer">
         <div class="grid-items grid-item1">
-            <img  onclick="showImgNumber()" id="one" src="../media/colorful1.png">
+            <img onclick="showImgNumber()" id="one" src="../media/colorful1.png">
             <br />
             <label>אחד</label>
         </div>
@@ -84,6 +89,7 @@
             <label>תשע</label>
         </div>
     </div>
-    <script  type="text/javascript" src="../js/game1.js"></script>
+    <script type="text/javascript" src="../js/game1.js"></script>
+    <script type="text/javascript" src="../js/general.js"></script>
 
 </body>

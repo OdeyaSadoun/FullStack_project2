@@ -1,10 +1,10 @@
-window.onload = function(){
+window.onload = function () {
     let user = localStorage.getItem('user1');
     console.log(localStorage);
-   }
-   
+}
 
-   function submitLogin() {
+
+function submitLogin() {
     // let fname = document.getElementById("first_name").value;
     // let lname = document.getElementById("last_name").value;
     // let phone = document.getElementById("phone").value;
@@ -14,11 +14,11 @@ window.onload = function(){
     // const user = { name: fname + " " + lname, phone: phone, email: email, password: password };
     // console.log(user);
     let user = window.localStorage.getItem(email);
-    if (user == undefined){
+    if (user == undefined) {
 
     }
-    else{
+    else {
         document.cookie = `email=${email}; path=/`;
     }
-    
+
 }

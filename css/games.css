@@ -38,5 +38,11 @@ h3.head-game,
 .back_option {
 	right: 10px;
 	top: 5px;
-	display: inline-block; 
+	display: inline-block;
+}
+
+#username {
+	float: left;
+	margin-top: 0px;
+	font-size: 20px;
 }

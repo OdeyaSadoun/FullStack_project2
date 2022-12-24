@@ -1,4 +1,5 @@
-/<!DOCTYPE html>
+/
+<!DOCTYPE html>
 <html lang="en" dir="rtl">
 
 <head>
@@ -12,13 +13,18 @@
 </head>
 
 <body>
-    <header class="back_option">
-        <a href="../html/index.html">יציאה</a>
-        <a href="../html/games.html">חזרה לעמוד המשחקים</a>
+    <header class="header">
+        <div>
+            <a class="back_option" href="../html/index.html">יציאה</a>
+            <a class="back_option" href="../html/games.html">חזרה לעמוד המשחקים</a>
+            <span id='username'></span>
+        </div>
+
         <div class="welcome_game">
-            <h1>משחקי למידה</h1>
+            <h1>משחקי למידה שלב 3</h1>
         </div>
     </header>
+
     <h2>שלב 1</h2>
     <div class="dropdown">
         <button id="stages" class="dropbtn" onclick="showDropdown()">שלבים</button>
@@ -27,62 +33,64 @@
             <a href="./game1_2.html">שלב ב' - אותיות בעברית</a>
             <a href="./game1_3.html">שלב ג' - אותיות באנגלית</a>
         </div>
-      </div>
+    </div>
     <div class="grid-continer" id="grid-continer">
         <div class="grid-items grid-item1">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful1.png">
-            <br/>
+            <br />
             <label>אחד</label>
             <img id="img-1" src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful2.png">
         </div>
 
         <div class="grid-items grid-item2">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful2.png">
-            <br/>
+            <br />
             <label>שתיים</label>
         </div>
 
         <div class="grid-items grid-item3">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful3.png">
-            <br/>
+            <br />
             <label>שלוש</label>
         </div>
 
         <div class="grid-items grid-item4">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful4.png">
-            <br/>
+            <br />
             <label>ארבע</label>
         </div>
 
         <div class="grid-items grid-item5">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful5.png">
-            <br/>
+            <br />
             <label>חמש</label>
         </div>
 
         <div class="grid-items grid-item6">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful6.png">
-            <br/>
+            <br />
             <label>שש</label>
         </div>
 
         <div class="grid-items grid-item7">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful7.png">
-            <br/>
+            <br />
             <label>שבע</label>
         </div>
 
         <div class="grid-items grid-item8">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful8.png">
-            <br/>
+            <br />
             <label>שמונה</label>
         </div>
 
         <div class="grid-items grid-item9">
             <img src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful9.png">
-            <br/>
+            <br />
             <label>תשע</label>
         </div>
     </div>
-</body>
+    <script type="text/javascript" src="../js/game1.js"></script>
+    <script type="text/javascript" src="../js/general.js"></script>
 
+</body>

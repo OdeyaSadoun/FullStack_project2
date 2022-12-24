@@ -120,6 +120,7 @@ p {
     @include corners(5px);
     border: solid 1px #fff;
 }
+
 #alphabet li:hover {
     background: green;
     border: solid 1px #fff;
@@ -190,4 +191,16 @@ button:hover {
     #alphabet {
         padding: 0 0 0 25px;
     }
+}
+
+.back_option {
+    right: 10px;
+    top: 5px;
+    display: inline-block;
+}
+
+#username {
+    float: left;
+    margin-top: 0px;
+    font-size: 20px;
 }

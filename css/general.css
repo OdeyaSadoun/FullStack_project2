@@ -5,7 +5,6 @@
 body {
   direction: rtl;
   background-color: rgb(224, 245, 245);
-  background-image: url(bunga.jpg);
   background-size: cover;
   background-attachment: fixed;
 }

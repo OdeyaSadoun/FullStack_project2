@@ -8,8 +8,8 @@ window.onload = function(){
     // let fname = document.getElementById("first_name").value;
     // let lname = document.getElementById("last_name").value;
     // let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
     // const user = { name: fname + " " + lname, phone: phone, email: email, password: password };
     // console.log(user);

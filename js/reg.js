@@ -3,8 +3,8 @@ let IDNUMBER = 0;
 
 function validPasswordFunction() {
     // Get the value of the input field with id="numb"
-    let password = document.getElementById("password").value;
-    let re_password = document.getElementById("re_password").value;
+    let password = document.getElementById('password').value;
+    let re_password = document.getElementById('re_password').value;
     // If x is Not a Number or less than one or greater than 10
     let text;
     if (isNaN(password) || password < 1 || password > 10) {
@@ -12,7 +12,7 @@ function validPasswordFunction() {
     } else {
         text = "Input OK";
     }
-    document.getElementById("password").innerHTML = text;
+    document.getElementById('password').innerHTML = text;
 }
 
 function hasNumber() {
@@ -34,11 +34,11 @@ function confirmPassword() {
 
 
 function submitReg() {
-    let fname = document.getElementById("first_name").value;
-    let lname = document.getElementById("last_name").value;
-    let phone = document.getElementById("phone").value;
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
+    let fname = document.getElementById('first_name').value;
+    let lname = document.getElementById('last_name').value;
+    let phone = document.getElementById('phone').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
     const user = { name: fname + " " + lname, phone: phone, email: email, password: password };
     console.log(user);

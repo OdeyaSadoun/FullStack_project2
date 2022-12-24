@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,52 +12,60 @@
 </head>
 
 <body>
-    <header>   
+    <header>
         <h1>הרשמה</h1>
-    </header> <div class="div_form">
-    <h2>מלא את הפרטים הבאים:</h2>
-    <form action="login.html" target="_blank">
-        <ul>
-            <li>
-                <label for="first_name"><b>שם פרטי:</b></label>
-                <input class="text" type="text" placeholder="הכנס את השם הפרטי שלך" id="first_name" name="first_name" required>
-            </li>
+    </header>
+    <div class="div_form">
+        <h2>מלא את הפרטים הבאים:</h2>
+        <form action="login.html">
+            <ul>
+                <li>
+                    <label for="first_name"><b>שם פרטי:</b></label>
+                    <input class="text" type="text" placeholder="הכנס את השם הפרטי שלך" id="first_name"
+                        name="first_name" required>
+                </li>
 
-            <li>
-                <label for="last_name"><b>שם משפחה:</b></label>
-                <input class="text" type="text" placeholder="הכנס את שם המשפחה שלך" name="last_name" required>
-            </li>
+                <li>
+                    <label for="last_name"><b>שם משפחה:</b></label>
+                    <input class="text" type="text" placeholder="הכנס את שם המשפחה שלך" id="last_name" name="last_name" required>
+                </li>
 
-            <li>
-                <label for="phone"><b>מספר פלאפון:</b></label>
-                <input class="text"  type="tel" id="phone" name="phone" placeholder="XXX-XXXXXXX" pattern="[0-9]{3}-[0-9]{7}" required>
-            </li>
+                <li>
+                    <label for="phone"><b>מספר פלאפון:</b></label>
+                    <input class="text" type="tel" id="phone" name="phone" placeholder="XXX-XXXXXXX"
+                        pattern="[0-9]{3}-[0-9]{7}" required>
+                </li>
 
-            <li>
-                <label for="email"><b>אי-מייל:</b></label>
-                <input class="text" type="email" placeholder="הכנס את האי-מייל שלך" id="email" name="email" required>
-            </li>
-            
-            <li>
-                <label for="password"><b>בחר סיסמא:</b></label>
-                <input class="text" type="password" placeholder="הכנס את הסיסמא שלך" id="password" name="password" required>
-            </li>
+                <li>
+                    <label for="email"><b>אי-מייל:</b></label>
+                    <input class="text" type="email" placeholder="הכנס את האי-מייל שלך" id="email" name="email"
+                        required>
+                </li>
 
-            <li>
-                <label for="re_password"><b>אמת את הסיסמא שלך:</b></label>
-                <input class="text" type="password" placeholder="הכנס שוב את הסיסמא שלך" id="re_password" name="re_password" required>
-            </li>
+                <li>
+                    <label for="password"><b>בחר סיסמא:</b></label>
+                    <input class="text" type="password" placeholder="הכנס את הסיסמא שלך" id="password" name="password"
+                        required>
+                </li>
 
-            <li>
-                <button type="submit" class="btn">אישור</button>
-            </li>
+                <li>
+                    <label for="re_password"><b>אמת את הסיסמא שלך:</b></label>
+                    <input class="text" type="password" placeholder="הכנס שוב את הסיסמא שלך" id="re_password"
+                        name="re_password" required onchange="confirmPassword()">
+                </li>
+                <span id='message'></span>
+                <li>
+                    <button type="submit" id="submit" name="submit" class="btn" onclick="submitReg()">אישור</button>
+                </li>
 
-            <li>
-                <a href="../html/index.html">
-                <button type="button" class="btn cancel">סגור</button></a>
-            </li>
-        </ul>
-    </form>
-</div> 
+                <li>
+                    <a href="../html/index.html">
+                        <button type="button" id="cancel_bt" name="cancel_bt" class="btn cancel">סגור</button></a>
+                </li>
+            </ul>
+        </form>
+    </div>
+    <script type="text/javascript" src="../js/reg.js"></script>
 </body>
+
 </html>

@@ -29,8 +29,6 @@ function confirmPassword() {
         document.getElementById('message').innerHTML = "אימות הסיסמא שונה מהסיסמא";
         document.getElementById('message').style.color = 'black';
         document.getElementById('submit').value = '';
-        // document.getElementById('message').innerHTML = "no match";
-        // document.getElementById('message').style.backgroundColor = 'red';
     }
 }
 

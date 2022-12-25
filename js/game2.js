@@ -4,6 +4,14 @@ window.onload = function () {
     'ט', 'י', 'כ', 'ל', 'מ', 'נ', 'ס', 'ע', 'פ', 'צ', 'ק',
     'ר', 'ש', 'ת', 'ם', 'ך', 'ף', 'ץ', 'ן'];
 
+
+  const email = document.cookie.split(';')[0]; //key value 0 = email
+  const emailvalue = email.substring(email.indexOf('=') + 1);
+  let user = localStorage.getItem(emailvalue);
+  let userjson = JSON.parse(user);
+  document.getElementById('username').innerHTML = "שלום " + userjson.name + "\t ניקוד: " + userjson.score;
+  alert(user);
+
   var categories;         // Array of topics
   var chosenCategory;     // Selected catagory
   var getHint;          // Word getHint

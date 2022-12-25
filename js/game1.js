@@ -3,12 +3,17 @@ function showDropdown() {
   document.getElementById('myDropdown').classList.toggle('show');
 }
 
-function showImgNumber() {
-  let one = document.getElementById('one');
-  one.src = '../media/chess.jpg';
-  let two = document.getElementById('two');
-  two.src = './media/chess/jpg';
+
+function showImgNumber(num) {
+  findNumber(num);
 }
+
+function findNumber(n){
+  let letNUM= document.getElementById(n.toString());
+  letNUM.src ='../media/poto-numbers/'+ n.toString() +'.jpg';
+}
+
+
 
 window.onload = function () {
   const email = document.cookie.split(';')[0]; //key value 0 = email

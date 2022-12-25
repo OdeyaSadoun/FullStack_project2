@@ -10,17 +10,17 @@ window.onload = function () {
   let user = localStorage.getItem(emailvalue);
   let userjson = JSON.parse(user);
   document.getElementById('username').innerHTML = "שלום " + userjson.name + "\t ניקוד: " + userjson.score;
-  alert(user);
 
-  var categories;         // Array of topics
-  var chosenCategory;     // Selected catagory
-  var getHint;          // Word getHint
-  var word;              // Selected word
-  var guess;             // Geuss
-  var geusses = [];      // Stored geusses
-  var lives;             // Lives
-  var counter;           // Count correct geusses
-  var space;              // Number of spaces in word '-'
+  let categories;         // Array of topics
+  let chosenCategory;     // Selected catagory
+  // let getHint;          // Word getHint
+  let word;              // Selected word
+  let guess;             // Geuss
+  let geusses = [];      // Stored geusses
+  let lives;             // Lives
+  let counter;           // Count correct geusses
+  let space;              // Number of spaces in word '-'
+  let score;              //score for this game
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -59,9 +59,16 @@ window.onload = function () {
   }
 
   // Create geusses ul
+  //יוצר את המילה הרצויה לניחוש
   result = function () {
     wordHolder = document.getElementById('hold');
+
+    console.log(wordHolder);
+
     correct = document.createElement('ul');
+
+    console.log(correct);
+
 
     for (var i = 0; i < word.length; i++) {
       correct.setAttribute('id', 'my-word');
@@ -69,12 +76,15 @@ window.onload = function () {
       guess.setAttribute('class', 'guess');
       if (word[i] === "-") {
         guess.innerHTML = "-";
-        space = 1;
+        space += 1;
       } else {
         guess.innerHTML = "_";
       }
 
       geusses.push(guess);
+
+      console.log(guess);
+
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
@@ -85,10 +95,12 @@ window.onload = function () {
     showLives.innerHTML = "נשארו לך " + lives + " חיים";
     if (lives < 1) {
       showLives.innerHTML = "סוף המשחק!";
+      score = 0;
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "ניצחת!";
+
       }
     }
   }
@@ -96,7 +108,14 @@ window.onload = function () {
   // Animate man
   var animate = function () {
     var drawMe = lives;
+
+    console.log(drawMe);
+
     drawArray[drawMe]();
+
+    console.log(drawArray);
+    console.log(drawArray[drawMe]);
+
   }
 
 
@@ -125,6 +144,8 @@ window.onload = function () {
     context.stroke();
   }
 
+
+  //הציור של האיש תלוי
   frame1 = function () {
     draw(0, 150, 150, 150);
   };
@@ -168,6 +189,9 @@ window.onload = function () {
   check = function () {
     list.onclick = function () {
       var geuss = (this.innerHTML);
+
+      console.log(guess); //letter
+
       this.setAttribute("class", "active");
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
@@ -177,7 +201,7 @@ window.onload = function () {
         }
       }
       var j = (word.indexOf(geuss));
-      if (j === -1) {
+      if (j === -1) { //אם האות לא קיימת
         lives -= 1;
         comments();
         animate();
@@ -196,13 +220,24 @@ window.onload = function () {
       ["אלעד", "פתח תקווה", "רחובות", "ירושליים", "בני ברק", "אילת", "דימונה"]
     ];
 
+    console.log(categories);
+
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
+
+    console.log(chosenCategory);
+
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
-    word = word.replace(/\s/g, "-");
+
     console.log(word);
-    buttons();
+
+    word = word.replace(/\s/g, "-");
+
+    console.log(word);
+
+    buttons(); //abc...
 
     geusses = [];
+    score = 10;
     lives = 10;
     counter = 0;
     space = 0;
@@ -213,6 +248,7 @@ window.onload = function () {
   }
 
   play();
+  addScoreToUser(score);
 
   // Hint
 
@@ -227,6 +263,8 @@ window.onload = function () {
     var catagoryIndex = categories.indexOf(chosenCategory);
     var hintIndex = chosenCategory.indexOf(word);
     showClue.innerHTML = "רמז: " + hints[catagoryIndex][hintIndex];
+    score -= 5;
+    console.log(score);
   };
 
   // Reset
@@ -240,4 +278,11 @@ window.onload = function () {
   }
 }
 
-
+function addScoreToUser(s) {
+  const email = document.cookie.split(';')[0]; //key value 0 = email
+  const emailvalue = email.substring(email.indexOf('=') + 1);
+  let user = localStorage.getItem(emailvalue);
+  let userjson = JSON.parse(user);
+  userjson.score += s;
+  window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
+}

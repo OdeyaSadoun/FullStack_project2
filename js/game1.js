@@ -5,7 +5,7 @@ function showDropdown() {
 
 function showImgNumber() {
   let one = document.getElementById('one');
-  one.src = './media/chess/jpg';
+  one.src = '../media/chess.jpg';
   let two = document.getElementById('two');
   two.src = './media/chess/jpg';
 }

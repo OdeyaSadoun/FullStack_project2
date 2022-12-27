@@ -62,26 +62,25 @@ function confirmPassword() {
 
 
 function submitReg() {
-    let flaf = false
-    if(!verifyName()){
+    let flag = false
+    while(!verifyName()){
         alert('הכנס שוב את השם');
-
         let fname = document.getElementById('first_name').innerText = "";
         let lname = document.getElementById('last_name').innerText = "";
     }
-    if(flag){
+
     let fname = document.getElementById('first_name').value;
     let lname = document.getElementById('last_name').value;
     let phone = document.getElementById('phone').value;
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
     let score = 0;
+    let actions = [];
 
-    const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score };
+    const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score, actions: actions};
     console.log(user);
     window.localStorage.setItem(email, JSON.stringify(user));
     document.cookie = `email=${email}; path=/`;
-    }
 }
 
 

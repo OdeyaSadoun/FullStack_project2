@@ -18,6 +18,7 @@ function submitLogin() {
         alert('שם משתמש או סיסמא שגויים');
     }
     else {
+        console.log(email);
         document.cookie = `email=${email}; path=/`;
     }
 

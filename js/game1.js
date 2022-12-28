@@ -21,6 +21,5 @@ window.onload = function () {
   let user = localStorage.getItem(emailvalue);
   let userjson = JSON.parse(user);
   document.getElementById('username').innerHTML = "שלום " + userjson.name + "\t ניקוד: " + userjson.score;
-  alert(user);
 }
 

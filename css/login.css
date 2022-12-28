@@ -52,3 +52,24 @@ form li a {
     margin-right: auto;
     margin-left: auto;
 }
+.btn {
+    background-color: rgb(52, 92, 92);
+    color: white;
+    padding: 10px 80px;
+    border: none;
+    opacity: 0.8;
+    flex: 1;
+    border: 1px #b7e6e6 solid;
+}
+
+.btn:hover {
+    background-color: #9de031;
+
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+}

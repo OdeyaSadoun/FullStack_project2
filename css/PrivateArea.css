@@ -7,34 +7,17 @@ td{
     font-size: 15px;
 }
 
-div{
-    display: flex;
-}
-table{
-    margin-top: 10px;
-    flex: 1;
-    
-}
-.title{
-    display: flex;
+#tablearea table{
+    align-items: center;
+   
 }
 
-.play1{
-    flex: 1;
+div #tablearea{
+    align-items: center;
+    left: 15px;
+    bottom: 20px;
+    color: chartreuse;  
 }
-
-.play2{
-    flex: 1;
-}
-
-.h1 {
-    flex: 1;
-}
-
-.h2 {
-    flex: -1;
-}
-
 
 table, th, td {
     border: solid 2px  rgb(52, 92, 92);;
@@ -44,3 +27,30 @@ table, th, td {
     vertical-align:middle;
 }
 
+table{
+    position:absolute;
+    left: 120px;
+    bottom: 40px;
+    top: 300px;
+    overflow:scroll;
+}
+h1.hellow{
+    font-size:60px;
+    color: darkblue;
+    text-align: center;
+}
+
+h1{
+    font-size:45px;
+    color: darkblue;
+    margin-right: 80px;
+}
+
+label{
+    font-size:25px;
+    margin-right: 80px;
+}
+
+output{
+    font-size:23px;
+}

@@ -2,11 +2,12 @@
     display: inline-block;
 }
 
-.grid-continer {
-    width: 25cm;
-    height: 15cm;
-    margin-left: 4cm;
-    margin-right: 4cm;
+.grid-continer{
+    width:auto;
+    height: 13cm;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -16,45 +17,25 @@
     background-color: white;
 }
 
-.grid-items {
-    flex: 1;
+.grid-items{
+    flex:1;
     padding: 20px;
     width: 10cm;
     height: 6cm;
 }
 
-.grid-items img {
+.grid-items img{
     width: auto;
     height: 5cm;
 }
 
-@media screen and (max-width: 600px) {
-    h1 {
+@media screen and (max-width: 600px){
+    h1{
         font-size: 45px;
     }
 }
 
-#img-1 {
-    display: none;
-    margin-right: auto;
-    margin-left: auto;
-    width: 100px;
-}
 
-.grid-item1:hover #img-1 {
-    display: none;
-}
-
-#img-2 {
-    display: none;
-    margin-right: auto;
-    margin-left: auto;
-    width: 100px;
-}
-
-.item_2:hover #img-2 {
-    display: block;
-}
 
 /*תפריט*/
 .dropbtn {

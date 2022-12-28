@@ -7,13 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>משחקי למידה</title>
     <link href="../css/general.css" rel="stylesheet" type="text/css" />
-    <link href="../css/game1.css" rel="stylesheet" type="text/css" />
+    <link href="../css/game1_2.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 <body>
     <header class="header">
         <div>
+            <a href="../html/index.html" class="button">X</a>
             <a class="back_option" href="../html/index.html">יציאה</a>
             <a class="back_option" href="../html/games.html">חזרה לעמוד המשחקים</a>
             <span id='username'></span>
@@ -36,83 +37,142 @@
     <div class="grid-continer" id="grid-continer">
         <div class="grid-items grid-item1">
             <img
-                src="../media/alef.jpg">
+                onclick="showImgAlefBeit('alef')" id="alef" src="../media/alef-beit/alef.jpg">
             <br />
             <label>א'</label>
-            <img id="img-1" src="https://www.yo-yoo.co.il/coolpics/images/uploads/colorful2.png">
         </div>
 
         <div class="grid-items grid-item2">
             <img
-                src="../media/beit.jpg">
+            onclick="showImgAlefBeit('beit')" id="beit" src="../media/alef-beit/beit.jpg">
             <br />
             <label>ב'</label>
         </div>
 
         <div class="grid-items grid-item3">
             <img
-                src="../media/gimel.jpg">
+            onclick="showImgAlefBeit('gimel')" id="gimel" src="../media/alef-beit/gimel.jpg">
             <br />
             <label>ג'</label>
         </div>
 
         <div class="grid-items grid-item4">
             <img
-                src="../media/daled.jpg">
+            onclick="showImgAlefBeit('daled')" id="daled" src="../media/alef-beit/daled.jpg">
             <br />
             <label>ד'</label>
         </div>
 
         <div class="grid-items grid-item5">
             <img
-                src="../media/hei.jpg">
+            onclick="showImgAlefBeit('hei')" id="hei" src="../media/alef-beit/hei.jpg">
             <br />
             <label>ה'</label>
         </div>
 
         <div class="grid-items grid-item6">
-            <img src="../media/vav.jpg">
+            <img onclick="showImgAlefBeit('vav')" id="vav" src="../media/alef-beit/vav.jpg">
             <br />
             <label>ו'</label>
         </div>
 
         <div class="grid-items grid-item7">
-            <img src="../media/zain.jpg">
+            <img onclick="showImgAlefBeit('zain')" id="zain" src="../media/alef-beit/zain.jpg">
             <br />
             <label>ז'</label>
         </div>
 
         <div class="grid-items grid-item8">
-            <img src="../media/ceit.jpg">
+            <img onclick="showImgAlefBeit('ceit')" id="ceit" src="../media/alef-beit/ceit.jpg">
             <br />
             <label>ח'</label>
         </div>
 
         <div class="grid-items grid-item9">
-            <img src="../media/teit.jpg">
+            <img onclick="showImgAlefBeit('teit')" id="teit" src="../media/alef-beit/teit.jpg">
             <br />
             <label>ט'</label>
         </div>
 
         <div class="grid-items grid-item9">
-            <img src="../media/yud.jpg">
+            <img onclick="showImgAlefBeit('yud')" id="yud" src="../media/alef-beit/yud.jpg">
             <br />
             <label>י'</label>
         </div>
 
         <div class="grid-items grid-item9">
-            <img src="../media/kaf.jpg">
+            <img onclick="showImgAlefBeit('kaf')" id="kaf" src="../media/alef-beit/kaf.jpg">
             <br />
             <label>כ'</label>
         </div>
 
         <div class="grid-items grid-item9">
-            <img src="../media/lamed.jpg">
+            <img onclick="showImgAlefBeit('lamed')" id="lamed" src="../media/alef-beit/lamed.jpg">
             <br />
             <label>ל'</label>
         </div>
+
+        <div class="grid-items grid-item7">
+            <img onclick="showImgAlefBeit('mem')" id="mem" src="../media/alef-beit/mem.jpg">
+            <br />
+            <label>מ'</label>
+        </div>
+
+        <div class="grid-items grid-item8">
+            <img onclick="showImgAlefBeit('nun')" id="nun" src="../media/alef-beit/nun.jpg">
+            <br />
+            <label>נ'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('samech')" id="samech" src="../media/alef-beit/samech.jpg">
+            <br />
+            <label>ס'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('hain')" id="hain" src="../media/alef-beit/hain.jpg">
+            <br />
+            <label>ע'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('pei')" id="pei" src="../media/alef-beit/pei.jpg">
+            <br />
+            <label>פ'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('tsadik')" id="tsadik" src="../media/alef-beit/tsadik.jpg">
+            <br />
+            <label>צ'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('kuf')" id="kuf" src="../media/alef-beit/kuf.jpg">
+            <br />
+            <label>ק'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('reysh')" id="reysh" src="../media/alef-beit/reysh.jpg">
+            <br />
+            <label>ר'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('shin')" id="shin" src="../media/alef-beit/shin.jpg">
+            <br />
+            <label>ש'</label>
+        </div>
+
+        <div class="grid-items grid-item9">
+            <img onclick="showImgAlefBeit('taf')" id="taf" src="../media/alef-beit/taf.jpg">
+            <br />
+            <label>ת'</label>
+        </div>
     </div>
-    <script src="../js/game1.js" type="text/javascript"></script>
+    <script src="../js/game1_2.js" type="text/javascript"></script>
 
 </body>
 

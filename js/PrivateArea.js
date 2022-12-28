@@ -6,7 +6,7 @@ function getDetailsForAllUsers() {
 
         // set iteration key name
         var key = localStorage.key(i);
-        console.log(key + "keyyyyyy");
+        console.log(key + "key");
 
         // use key name to retrieve the corresponding value
         var value = localStorage.getItem(key);
@@ -26,6 +26,27 @@ window.onload = function () {
 
     let table = document.createElement('table');
     let users = getDetailsForAllUsers();
+
+    let tr = document.createElement('tr');
+
+    let th1 = document.createElement('th');
+    let th2 = document.createElement('th');
+    let th3 = document.createElement('th');
+
+    let nameUser = document.createTextNode("שם");
+    let scoreUser = document.createTextNode("ניקוד");
+    let lastAction = document.createTextNode("פעילות אחרונה");
+
+    th1.appendChild(nameUser);
+    th2.appendChild(scoreUser);
+    th3.appendChild(lastAction);
+
+    tr.appendChild(th1);
+    tr.appendChild(th2);
+    tr.appendChild(th3);
+
+
+    table.appendChild(tr); 
     for (let i = 0; i < users.length; i++) {
         let tr = document.createElement('tr');
 
@@ -50,5 +71,21 @@ window.onload = function () {
     }
     document.body.appendChild(table);
 
+
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    document.getElementById('first_name').innerHTML = userjson.name;
+    document.getElementById('phone').innerHTML = userjson.phone;
+    document.getElementById('email').innerHTML = userjson.email;
+    document.getElementById('password').innerHTML = userjson.password;
+    document.getElementById('score').innerHTML = userjson.score;
+    console.log(userjson.score);
+    alert(user);
 }
+
+
+    
+
 

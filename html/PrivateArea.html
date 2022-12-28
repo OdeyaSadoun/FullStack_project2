@@ -8,6 +8,7 @@
     <title>ברוכים הבאים לאזור האישי </title>
     <link href="../css/general.css" rel="stylesheet" type="text/css" />
     <link href="../css/PrivateArea.css" rel="stylesheet" type="text/css" />
+    <link href="../css/header.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -18,7 +19,46 @@
             <a class="back_option" href="../html/games.html">חזרה לעמוד המשחקים</a>
             <!-- <span id='tablescore'></span> -->
         </div>
+        <h1 class="hellow">אזור אישי</h1>
     </header>
+
+    
+    <div class="div_form">
+        <h1>הפרטים שלך:</h1>
+        <form>
+            <ul>
+                <li>
+                    <label for="first_name"><b>שם מלא: </b></label>
+                    <output class="text" type="text" id="first_name"
+                        name="first_name" required>
+                </li>
+
+                <li>
+                    <label for="phone"><b>מספר פלאפון: </b></label>
+                    <output class="text" type="tel" id="phone" name="phone" placeholder="XXX-XXXXXXX"
+                        pattern="[0-9]{3}-[0-9]{7}" required>
+                </li>
+
+                <li>
+                    <label for="email"><b>אי-מייל: </b></label>
+                    <output class="text" type="email" placeholder="הכנס את האי-מייל שלך" id="email" name="email"
+                        required>
+                </li>
+
+                <li>
+                    <label for="password"><b>הסיסמא שלך היא: </b></label>
+                    <output class="text" type="password" placeholder="הסיסמא שלך:" id="password" name="password" onchange="verifyPassword()" required>
+                </li>
+
+                <li>
+                    <label for="score"><b>מספר הנקודות שצברת עד כה הוא: </b></label>
+                    <output class="text" type="score" placeholder="מספר הנקודות שצברת עד כה הוא:" id="score"
+                        name="score" required>
+                </li>
+                <span id='message'></span>
+            </ul>
+        </form>
+    </div>
 
 
     <div id="tablearea"></div>

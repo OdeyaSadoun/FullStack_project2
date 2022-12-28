@@ -82,7 +82,6 @@ window.onload = function () {
     document.getElementById('password').innerHTML = userjson.password;
     document.getElementById('score').innerHTML = userjson.score;
     console.log(userjson.score);
-    alert(user);
 }
 
 

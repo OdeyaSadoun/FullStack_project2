@@ -66,7 +66,7 @@ function confirmPassword() {
     var pw1 = document.getElementById("password").value;
     var pw2 = document.getElementById("re_password").value;
 
-    if (pw1 !== pw2) {
+    if (pw1 !== pw2 && !verifyPassword()) {
         document.getElementById("message").innerHTML = "הסיסמא ואימות הסיסמא אינן שוות- יש לנסות שוב";
         document.getElementById("re_password").value = "";
         document.getElementById("re_password").style.borderColor = "red";
@@ -81,18 +81,30 @@ function confirmPassword() {
 
 function submitReg() {
 
-    let fname = document.getElementById('first_name').value;
-    let lname = document.getElementById('last_name').value;
-    let phone = document.getElementById('phone').value;
-    let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
-    let score = 0;
-    let actions = [];
+    let re_password = document.getElementById('re_password').value;
 
-    const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score, actions: actions };
-    console.log(user);
-    window.localStorage.setItem(email, JSON.stringify(user));
-    document.cookie = `email=${email}; path=/`;
+    let fname = document.getElementById('first_name').value;
+        let lname = document.getElementById('last_name').value;
+        let phone = document.getElementById('phone').value;
+        let email = document.getElementById('email').value;
+
+    if(password != undefined && fname != undefined && lname != undefined && phone != undefined && email != undefined && re_password != undefined){
+        
+        
+        let score = 0;
+        let actions = [];
+    
+        const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score, actions: actions };
+        console.log(user);
+        window.localStorage.setItem(email, JSON.stringify(user));
+        document.cookie = `email=${email}; path=/`;
+    }
+    else{
+        alert('שגיאה')
+        location.href = 'index.html';
+    }
+  
 }
 
 

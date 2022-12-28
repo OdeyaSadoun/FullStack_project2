@@ -23,3 +23,6 @@ function submitLogin() {
     }
 
 }
+function goBegining() {
+    location.href = 'index.html';
+}

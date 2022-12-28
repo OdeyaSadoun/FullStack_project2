@@ -51,19 +51,22 @@ form li a {
 
 
 .btn {
-    background-color: rgb(148, 149, 150);
+    background-color: rgb(52, 92, 92);
     color: white;
-    padding: 16px 100px;
+    padding: 10px 80px;
     border: none;
     opacity: 0.8;
     flex: 1;
-  }
+    border: 1px #b7e6e6 solid;
+}
 
-  
+.btn:hover {
+    background-color: #47cf4e;
 
-  .buttons{
+}
+
+.buttons {
     display: flex;
-    justify-content: center;  
-    align-items: center;  
-  }
-  
+    justify-content: center;
+    align-items: center;
+}

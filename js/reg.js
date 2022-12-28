@@ -84,3 +84,6 @@ function submitReg() {
 }
 
 
+function goBegining(){
+    location.href = 'index.html';
+}

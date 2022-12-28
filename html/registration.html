@@ -45,7 +45,8 @@
 
                 <li>
                     <label for="password"><b>בחר סיסמא:</b></label>
-                    <input class="text" type="password" placeholder="הכנס את הסיסמא שלך" id="password" name="password" onchange="verifyPassword()" required>
+                    <input class="text" type="password" placeholder="הכנס את הסיסמא שלך" id="password" name="password"
+                        onchange="verifyPassword()" required>
                 </li>
 
                 <li>
@@ -56,9 +57,9 @@
                 <span id='message'></span>
                 <li class="buttons">
                     <button type="submit" id="submit" name="submit" class="btn" onclick="submitReg()">אישור</button>
-                    <button type = "reset" class="btn" value = "Reset" >איפוס</button>  
-                    <a href="../html/index.html">
-                        <button type="button" id="cancel_bt" name="cancel_bt" class="btn cancel">סגור</button></a>
+                    <button type="reset" class="btn" value="Reset">איפוס</button>
+                    <button type="button" id="cancel_bt" name="cancel_bt" class="btn cancel"
+                        onclick="goBegining()">סגור</button>
                 </li>
             </ul>
         </form>

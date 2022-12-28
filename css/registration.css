@@ -48,3 +48,22 @@ form li a {
     margin-right: auto;
     margin-left: auto;
 }
+
+
+.btn {
+    background-color: rgb(148, 149, 150);
+    color: white;
+    padding: 16px 100px;
+    border: none;
+    opacity: 0.8;
+    flex: 1;
+  }
+
+  
+
+  .buttons{
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+  }
+  

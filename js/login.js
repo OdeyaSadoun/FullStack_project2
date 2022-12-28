@@ -14,8 +14,8 @@ function submitLogin() {
     // const user = { name: fname + " " + lname, phone: phone, email: email, password: password };
     // console.log(user);
     let user = window.localStorage.getItem(email);
-    if (user == undefined) {
-
+    if (user === undefined) {
+        alert('שם משתמש או סיסמא שגויים');
     }
     else {
         document.cookie = `email=${email}; path=/`;

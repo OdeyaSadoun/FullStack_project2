@@ -30,7 +30,7 @@ function addActionToUser() {
   let userjson = JSON.parse(user);
   console.log(userjson.actions + userjson.name);
   const enterGameDate = new Date();
-  userjson.actions[userjson.counter++] = ({time: enterGameDate.toString() , action: "משחק למידה שלב 1"});
+  userjson.actions[userjson.counter++] = {time: enterGameDate.toString() , action: "משחק למידה שלב 1"};
   window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
 }
    addActionToUser();

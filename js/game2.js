@@ -20,6 +20,7 @@ window.onload = function () {
   let counter;           // Count correct geusses
   let space;              // Number of spaces in word '-'
   let score;              //score for this game
+  let playGameFinish = false;
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -95,12 +96,14 @@ window.onload = function () {
       showLives.innerHTML = "סוף המשחק!";
       console.log("סוףףףףף" + score)
       score = 0;
+      playGameFinish = true;
       console.log("סופי סופי" + score)
 
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "ניצחת!";
+        playGameFinish = true;
       }
     }
   }
@@ -220,19 +223,11 @@ window.onload = function () {
       ["אלעד", "פתח תקווה", "רחובות", "ירושליים", "בני ברק", "אילת", "דימונה"]
     ];
 
-    console.log(categories);
-
     chosenCategory = categories[Math.floor(Math.random() * categories.length)];
-
-    console.log(chosenCategory);
 
     word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
 
-    console.log(word);
-
     word = word.replace(/\s/g, "-");
-
-    console.log(word);
 
     buttons(); //abc...
 
@@ -242,13 +237,16 @@ window.onload = function () {
     counter = 0;
     space = 0;
 
-
     result();
     comments();
     selectCat();
     canvas();
-    addScoreToUser(score);
+
     addActionToUser();
+
+
+   
+
     console.log('הגענו לכאןן עם ניקוד ' + score);
   }
 
@@ -278,12 +276,21 @@ window.onload = function () {
     play();
   }
 
-  // const myPromise = new Promise(function(myResolve, myReject) {
-  //   setTimeout(function(){ addScoreToUser(); }, {play();});
    play();
-  // console.log("אחרי המשחקק" + score)
 
-
+   const p = new Promise((resolve, reject) => {
+    if(playGameFinish){
+      resolve();
+    }
+    else{
+      reject();
+    }
+  });
+   p.then (() => {
+    addScoreToUser(score);
+    console.log('צריך להוסיף נקודות')
+  }).catch(()=> console.log('שגיאהההה'));
+  
 }
 
 function addScoreToUser(s) {

@@ -68,10 +68,8 @@ canvas {
   padding: 15px;
 }
 
-h1,
 h2,
 h3 {
-  font-family: 'Roboto', sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   margin: 5px 0;
@@ -197,4 +195,8 @@ button:hover {
   float: left;
   margin-top: 0px;
   font-size: 20px;
+}
+
+header{
+  text-align: right;
 }

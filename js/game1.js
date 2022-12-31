@@ -1,3 +1,5 @@
+
+
 /* showDropdown toggles between adding and removing the show class, which is used to hide and show the dropdown content */
 function showDropdown() {
   document.getElementById('myDropdown').classList.toggle('show');
@@ -11,8 +13,8 @@ function showImgNumber(num) {
 function findNumber(n){
   let letNUM= document.getElementById(n.toString());
   letNUM.src ='../media/poto-numbers/'+ n.toString() +'.jpg';
+  addScoreToUser();
 }
-
 
 
 window.onload = function () {
@@ -34,3 +36,12 @@ function addActionToUser() {
   window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
 }
    addActionToUser();
+
+   function addScoreToUser() {
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    userjson.score += 1;
+    window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
+  }

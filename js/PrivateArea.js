@@ -56,7 +56,7 @@ window.onload = function () {
 
         let nameUser = document.createTextNode(users[i].name);
         let scoreUser = document.createTextNode(users[i].score);
-        let lastAction = document.createTextNode("ykhkhkhk");
+        let lastAction = document.createTextNode(users[i].actions[users[i].actions.length-1]['action']);
 
         td1.appendChild(nameUser);
         td2.appendChild(scoreUser);

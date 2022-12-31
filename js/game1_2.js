@@ -6,6 +6,7 @@ function showImgAlefBeit(AlefBeit) {
   function findAlefBeit(l){
     let letAlefBeit= document.getElementById(l.toString());
     letAlefBeit.src ='../media//alef-beit-poto/'+ l.toString() +'.jpg';
+    addScoreToUser();
   }
   
   /* showDropdown toggles between adding and removing the show class, which is used to hide and show the dropdown content */
@@ -25,3 +26,12 @@ function showImgAlefBeit(AlefBeit) {
   }
 
   addActionToUser();
+
+  function addScoreToUser() {
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    userjson.score += 2;
+    window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
+  }

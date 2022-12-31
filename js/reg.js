@@ -22,7 +22,6 @@ function verifyPassword() {
     }
     else {
         document.getElementById("message").innerHTML = "הסיסמא תקינה:)";
-        // document.getElementById("password").style.borderColor = "default";
     }
 
     return true;
@@ -101,6 +100,9 @@ function submitReg() {
         console.log(user);
         window.localStorage.setItem(email, JSON.stringify(user));
         document.cookie = `email=${email}; path=/`;
+
+        document.getElementById('reg_form').submit();
+
     }
     else {
         alert('שגיאה')

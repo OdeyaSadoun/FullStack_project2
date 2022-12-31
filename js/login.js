@@ -5,21 +5,22 @@ window.onload = function () {
 
 
 function submitLogin() {
-    // let fname = document.getElementById("first_name").value;
-    // let lname = document.getElementById("last_name").value;
-    // let phone = document.getElementById("phone").value;
+
     let email = document.getElementById('email').value;
     let password = document.getElementById('password').value;
 
-    // const user = { name: fname + " " + lname, phone: phone, email: email, password: password };
-    // console.log(user);
-    let user = window.localStorage.getItem(email);
-    if (user === undefined) {
-        alert('שם משתמש או סיסמא שגויים');
+    let user = JSON.parse(window.localStorage.getItem(email));
+
+    if (user == undefined || user == null) {
+      alert('אינך קיים במערכת! לצורך כניסה יש להרשם');
     }
-    else {
+    else if(user.email == email && user.password == password){
         console.log(email);
         document.cookie = `email=${email}; path=/`;
+        document.getElementById('login_form').submit();
+    }
+    else {
+      alert('שם משתמש או סיסמא שגויים');
     }
 
 }

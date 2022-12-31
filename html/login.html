@@ -17,7 +17,7 @@
     </header>
     <div class="div_form">
         <h2>מלא את הפרטים הבאים:</h2>
-        <form action="games.html">
+        <form id="login_form" action="games.html">
             <ul>
                 <li>
                     <label for="email"><b>אי-מייל:</b></label>
@@ -32,7 +32,7 @@
                 </li>
 
                 <li class="buttons">
-                    <button type="submit" id="submit" name="submit" class="btn" onclick="submitLogin()">אישור</button>
+                    <button type="button" id="submitbtn" name="submitbtn" class="btn" onclick="submitLogin()">אישור</button>
                     <button type="reset" class="btn" value="Reset">איפוס</button>
                     <button type="button" id="cancel_bt" name="cancel_bt" class="btn cancel"
                         onclick="goBegining()">סגור</button>

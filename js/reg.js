@@ -93,7 +93,8 @@ function submitReg() {
 
 
         let score = 0;
-        let actions = ["registraction " + Date.now().toString()];
+        const enterGameDate = new Date();
+        let actions = ({ time: enterGameDate.toString(), action: "הרשמה" });
         let cnt = 1;
 
         const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score, actions: actions, counter: cnt };

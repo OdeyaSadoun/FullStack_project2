@@ -305,6 +305,7 @@ function addActionToUser() {
   let user = localStorage.getItem(emailvalue);
   let userjson = JSON.parse(user);
   console.log(userjson.actions + userjson.name);
-  userjson.actions[userjson.counter++] = (Date.now().toString() + " איש תלוי")
+  const enterGameDate = new Date();
+  userjson.actions[userjson.counter++] = ({time: enterGameDate.toString() , action: "איש תלוי"});
   window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
 }

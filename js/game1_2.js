@@ -13,3 +13,15 @@ function showImgAlefBeit(AlefBeit) {
     document.getElementById('myDropdown').classList.toggle('show');
   }
   
+  function addActionToUser() {
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    console.log(userjson.actions + userjson.name);
+    const enterGameDate = new Date();
+    userjson.actions[userjson.counter++] = ({time: enterGameDate.toString() , action: "משחק למידה שלב 2"});
+    window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
+  }
+
+  addActionToUser();

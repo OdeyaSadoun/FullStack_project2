@@ -76,14 +76,32 @@ window.onload = function () {
     const emailvalue = email.substring(email.indexOf('=') + 1);
     let user = localStorage.getItem(emailvalue);
     let userjson = JSON.parse(user);
+
     document.getElementById('first_name').innerHTML = userjson.name;
     document.getElementById('phone').innerHTML = userjson.phone;
     document.getElementById('email').innerHTML = userjson.email;
     document.getElementById('password').innerHTML = userjson.password;
     document.getElementById('score').innerHTML = userjson.score;
-    console.log(userjson.score);
+    console.log(userjson.actions);
+
+    document.getElementById('actions').innerHTML = display10LastAction();
+    
 }
 
+
+function display10LastAction(){
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    let str ="";
+
+    for(let i = userjson.actions.length - 1; i > userjson.actions.length - 5; i--){
+        str += userjson.actions[i].action + userjson.actions[i].time;
+        str += '\n';
+    }
+    return str;
+}
 
     
 

@@ -34,27 +34,28 @@
 
                 <li>
                     <label for="phone"><b>מספר פלאפון: </b></label>
-                    <output class="text" type="tel" id="phone" name="phone" placeholder="XXX-XXXXXXX"
-                        pattern="[0-9]{3}-[0-9]{7}" required>
+                    <output class="text" type="tel" id="phone" name="phone" required>
                 </li>
 
                 <li>
                     <label for="email"><b>אי-מייל: </b></label>
-                    <output class="text" type="email" placeholder="הכנס את האי-מייל שלך" id="email" name="email"
-                        required>
+                    <output class="text" type="email" id="email" name="email" required>
                 </li>
 
                 <li>
                     <label for="password"><b>הסיסמא שלך היא: </b></label>
-                    <output class="text" type="password" placeholder="הסיסמא שלך:" id="password" name="password" onchange="verifyPassword()" required>
+                    <output class="text" type="password" id="password" name="password" required>
                 </li>
 
                 <li>
                     <label for="score"><b>מספר הנקודות שצברת עד כה הוא: </b></label>
-                    <output class="text" type="score" placeholder="מספר הנקודות שצברת עד כה הוא:" id="score"
-                        name="score" required>
+                    <output class="text" type="score" id="score" name="score" required>
                 </li>
-                <span id='message'></span>
+                
+                <li>
+                    <label for="actions"><b>הפעילות שלך באתר:</b></label>
+                    <output class="text" type="actions" id="actions" name="actions" required>
+                </li>
             </ul>
         </form>
     </div>

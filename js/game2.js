@@ -1,9 +1,8 @@
 window.onload = function () {
 
   var alphabet = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ז', 'ח',
-    'ט', 'י', 'כ', 'ל', 'מ', 'נ', 'ס', 'ע', 'פ', 'צ', 'ק',
-    'ר', 'ש', 'ת', 'ם', 'ך', 'ף', 'ץ', 'ן'];
-
+    'ט', 'י', 'כ', 'ך', 'ל', 'מ', 'ם', 'נ', 'ן', 'ס', 'ע', 'פ', 'ף', 'צ', 'ץ', 'ק',
+    'ר', 'ש', 'ת'];
 
   const email = document.cookie.split(';')[0]; //key value 0 = email
   const emailvalue = email.substring(email.indexOf('=') + 1);
@@ -27,7 +26,6 @@ window.onload = function () {
   var showCatagory = document.getElementById("scatagory");
   var getHint = document.getElementById("hint");
   var showClue = document.getElementById("clue");
-
 
 
   // create alphabet ul
@@ -95,12 +93,14 @@ window.onload = function () {
     showLives.innerHTML = "נשארו לך " + lives + " חיים";
     if (lives < 1) {
       showLives.innerHTML = "סוף המשחק!";
+      console.log("סוףףףףף" + score)
       score = 0;
+      console.log("סופי סופי" + score)
+
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "ניצחת!";
-
       }
     }
   }
@@ -241,17 +241,22 @@ window.onload = function () {
     lives = 10;
     counter = 0;
     space = 0;
+
+
+
+
+
+
     result();
     comments();
     selectCat();
     canvas();
+    addScoreToUser(score);
+    addActionToUser();
+    console.log('הגענו לכאןן עם ניקוד ' + score);
   }
 
-  play();
-  addScoreToUser(score);
-
   // Hint
-
   hint.onclick = function () {
 
     hints = [
@@ -276,6 +281,13 @@ window.onload = function () {
     context.clearRect(0, 0, 400, 400);
     play();
   }
+
+  // const myPromise = new Promise(function(myResolve, myReject) {
+  //   setTimeout(function(){ addScoreToUser(); }, {play();});
+   play();
+  // console.log("אחרי המשחקק" + score)
+
+
 }
 
 function addScoreToUser(s) {
@@ -284,5 +296,15 @@ function addScoreToUser(s) {
   let user = localStorage.getItem(emailvalue);
   let userjson = JSON.parse(user);
   userjson.score += s;
+  window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
+}
+
+function addActionToUser() {
+  const email = document.cookie.split(';')[0]; //key value 0 = email
+  const emailvalue = email.substring(email.indexOf('=') + 1);
+  let user = localStorage.getItem(emailvalue);
+  let userjson = JSON.parse(user);
+  console.log(userjson.actions + userjson.name);
+  userjson.actions[userjson.counter++] = (Date.now().toString() + " איש תלוי")
   window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
 }

@@ -85,26 +85,27 @@ function submitReg() {
     let re_password = document.getElementById('re_password').value;
 
     let fname = document.getElementById('first_name').value;
-        let lname = document.getElementById('last_name').value;
-        let phone = document.getElementById('phone').value;
-        let email = document.getElementById('email').value;
+    let lname = document.getElementById('last_name').value;
+    let phone = document.getElementById('phone').value;
+    let email = document.getElementById('email').value;
 
-    if(password != undefined && fname != undefined && lname != undefined && phone != undefined && email != undefined && re_password != undefined){
-        
-        
+    if (password != null && fname != null && lname != null && phone != null && email != null && re_password != null) {
+
+
         let score = 0;
-        let actions = [];
-    
-        const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score, actions: actions };
+        let actions = ["registraction " + Date.now().toString()];
+        let cnt = 1;
+
+        const user = { name: fname + " " + lname, phone: phone, email: email, password: password, score: score, actions: actions, counter: cnt };
         console.log(user);
         window.localStorage.setItem(email, JSON.stringify(user));
         document.cookie = `email=${email}; path=/`;
     }
-    else{
+    else {
         alert('שגיאה')
         location.href = 'index.html';
     }
-  
+
 }
 
 

@@ -1,33 +1,38 @@
 function verifyPassword() {
+
     var pw = document.getElementById('password').value;
+
     //check empty password field  
     if (pw == "") {
-        document.getElementById("message").innerHTML = "לא הוזנה סיסמא - יש למלא";
+        document.getElementById("message").innerHTML = "לא הוזנה סיסמא - יש להזין";
         document.getElementById("password").style.borderColor = "red";
         return false;
     }
 
     //minimum password length validation  
-    if (pw.length < 8) {
+    else if (pw.length < 8) {
         document.getElementById("message").innerHTML = "אורך הסיסמא חייב להכיל לפחות 8 תווים";
         document.getElementById("password").style.borderColor = "red";
         return false;
     }
 
     //maximum length of password validation  
-    if (pw.length > 15) {
+    else if (pw.length > 15) {
         document.getElementById("message").innerHTML = "אורך הסיסמא יכול להכיל לא יותר מ15 תווים";
         document.getElementById("password").style.borderColor = "red";
         return false;
     }
+
     else {
         document.getElementById("message").innerHTML = "הסיסמא תקינה:)";
+        document.getElementById("password").style.borderColor = "green";
     }
 
     return true;
 }
 
 function verifyName() {
+
     //function to verify the text fields
 
     var fname = document.getElementById("first_name").value;
@@ -48,6 +53,8 @@ function verifyName() {
         return false;
     }
 
+    document.getElementById("first_name").style.borderColor = "green";
+
     //character data validation  
     if (!isNaN(lname)) {
         document.getElementById("message").innerHTML = "יש להזין אותיות ותווים- לא מספרים";
@@ -56,6 +63,7 @@ function verifyName() {
         return false;
     }
 
+    document.getElementById("last_name").style.borderColor = "green";
     return true;
 }
 
@@ -65,7 +73,7 @@ function confirmPassword() {
     var pw1 = document.getElementById("password").value;
     var pw2 = document.getElementById("re_password").value;
 
-    if (pw1 !== pw2 && !verifyPassword()) {
+    if (pw1 !== pw2 || !verifyPassword()) {
         document.getElementById("message").innerHTML = "הסיסמא ואימות הסיסמא אינן שוות- יש לנסות שוב";
         document.getElementById("re_password").value = "";
         document.getElementById("re_password").style.borderColor = "red";
@@ -73,6 +81,7 @@ function confirmPassword() {
     }
     else {
         document.getElementById("message").innerHTML = "נפלא!!!";
+        document.getElementById("re_password").style.borderColor = "green";
         return true;
     }
 }
@@ -88,8 +97,18 @@ function submitReg() {
     let phone = document.getElementById('phone').value;
     let email = document.getElementById('email').value;
 
-    if (password != null && fname != null && lname != null && phone != null && email != null && re_password != null) {
+    let userFromStroge = JSON.parse(window.localStorage.getItem(email));
 
+    if (userFromStroge != undefined || userFromStroge != null) {
+        alert('המשתמש כבר קיים במערכת! יש לבצע כניסה')
+        return false;
+    }
+
+    if (!password || !fname || !lname || !phone || !email || !re_password) {
+        alert('נא מלא את כל השדות לצורך הרשמה!');
+        return false;
+    }
+    else {
 
         let score = 0;
         const enterGameDate = new Date();
@@ -102,11 +121,6 @@ function submitReg() {
         document.cookie = `email=${email}; path=/`;
 
         document.getElementById('reg_form').submit();
-
-    }
-    else {
-        alert('שגיאה')
-        location.href = 'index.html';
     }
 
 }

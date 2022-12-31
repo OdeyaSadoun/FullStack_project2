@@ -76,3 +76,9 @@ form li a {
     align-items: center;
     bottom: 50px;
 }
+
+a.worngChoice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

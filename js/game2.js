@@ -243,10 +243,6 @@ window.onload = function () {
     space = 0;
 
 
-
-
-
-
     result();
     comments();
     selectCat();

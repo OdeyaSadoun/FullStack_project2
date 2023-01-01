@@ -1,3 +1,7 @@
+
+var score = 10;              //score for this game
+
+
 window.onload = function () {
 
   var alphabet = ['א', 'ב', 'ג', 'ד', 'ה', 'ו', 'ז', 'ח',
@@ -10,6 +14,12 @@ window.onload = function () {
   let userjson = JSON.parse(user);
   document.getElementById('username').innerHTML = "שלום " + userjson.name + "\t ניקוד: " + userjson.score;
 
+  const p = new Promise((resolve, reject) => {
+      resolve();
+    });
+
+
+
   let categories;         // Array of topics
   let chosenCategory;     // Selected catagory
   // let getHint;          // Word getHint
@@ -19,7 +29,6 @@ window.onload = function () {
   let lives;             // Lives
   let counter;           // Count correct geusses
   let space;              // Number of spaces in word '-'
-  let score;              //score for this game
   let playGameFinish = false;
 
   // Get elements
@@ -96,14 +105,15 @@ window.onload = function () {
       showLives.innerHTML = "סוף המשחק!";
       console.log("סוףףףףף" + score)
       score = 0;
-      playGameFinish = true;
+      addScoreToUser(score);
       console.log("סופי סופי" + score)
 
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
         showLives.innerHTML = "ניצחת!";
-        playGameFinish = true;
+        addScoreToUser(score);
+        return;
       }
     }
   }
@@ -216,7 +226,7 @@ window.onload = function () {
 
 
   // Play
-  play = function () {
+  function play() {
     categories = [
       ["סביון", "כלנית", "חצב", "רקפת", "חמניה", "ורד", "סיגלית"],
       ["פנתרה", "מי זאת", "מסע", "באת לי פתאום", "בעולם הזה", "צבעים", "להאמין", "קרן שמש"],
@@ -232,7 +242,7 @@ window.onload = function () {
     buttons(); //abc...
 
     geusses = [];
-    score = 10;
+    // score = 10;
     lives = 10;
     counter = 0;
     space = 0;
@@ -243,11 +253,9 @@ window.onload = function () {
     canvas();
 
     addActionToUser();
-
-
-   
-
-    console.log('הגענו לכאןן עם ניקוד ' + score);
+    // addScoreToUser(score);
+    // console.log('הגענו לכאןן עם ניקוד ' + score);
+    return score;
   }
 
   // Hint
@@ -273,14 +281,16 @@ window.onload = function () {
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
+    // p.then(play).then(addScoreToUser);
     play();
   }
 
 
+  // p.then(play).then(addScoreToUser);
   
   // playGame(addScoreToUser(score));
-  //  play();
-  
+    play();
+    // addScoreToUser(score);
 }
 
 function addScoreToUser(s) {

@@ -92,6 +92,7 @@ window.onload = function () {
       showLives.innerHTML = "סוף המשחק!";
       score = 0;
       addScoreToUser(score);
+      return;
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {

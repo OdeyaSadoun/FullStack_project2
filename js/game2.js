@@ -263,7 +263,7 @@ window.onload = function () {
     var hintIndex = chosenCategory.indexOf(word);
     showClue.innerHTML = "רמז: " + hints[catagoryIndex][hintIndex];
     score -= 5;
-    console.log(score);
+    console.log("score: " + score);
   };
 
   // Reset

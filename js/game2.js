@@ -276,20 +276,10 @@ window.onload = function () {
     play();
   }
 
-   play();
 
-   const p = new Promise((resolve, reject) => {
-    if(playGameFinish){
-      resolve();
-    }
-    else{
-      reject();
-    }
-  });
-   p.then (() => {
-    addScoreToUser(score);
-    console.log('צריך להוסיף נקודות')
-  }).catch(()=> console.log('שגיאהההה'));
+  
+  // playGame(addScoreToUser(score));
+  //  play();
   
 }
 
@@ -312,3 +302,4 @@ function addActionToUser() {
   userjson.actions[userjson.counter++] = {time: enterGameDate.toString() , action: "איש תלוי"};
   window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
 }
+

@@ -125,5 +125,5 @@ When you enter any page, at the top of the page near the exit and return
 
 
 
-GOOGD LUCK!!!
+GOOD LUCK!!!
 ODEYA & TALYA

@@ -87,22 +87,36 @@ window.onload = function () {
     document.getElementById('score').innerHTML = userjson.score;
     console.log(userjson.actions);
 
-    document.getElementById('actions').innerHTML = display10LastAction();
-    
+    document.getElementById('actions1').innerHTML = display1LastAction();
+    document.getElementById('actions2').innerHTML = display2LastAction();
+    document.getElementById('actions3').innerHTML = display3LastAction();
 }
 
 
-function display10LastAction(){
+function display1LastAction(){
     const email = document.cookie.split(';')[0]; //key value 0 = email
     const emailvalue = email.substring(email.indexOf('=') + 1);
     let user = localStorage.getItem(emailvalue);
     let userjson = JSON.parse(user);
-    let str ="";
+    let str = userjson.actions[userjson.actions.length - 1].action + userjson.actions[userjson.actions.length - 1].time;
+    return str;
+}
 
-    for(let i = userjson.actions.length - 1; i > userjson.actions.length - 5; i--){
-        str += userjson.actions[i].action + userjson.actions[i].time;
-        str += '\n';
-    }
+function display2LastAction(){
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    let str = userjson.actions[userjson.actions.length - 2].action + userjson.actions[userjson.actions.length - 2].time;
+    return str;
+}
+
+function display3LastAction(){
+    const email = document.cookie.split(';')[0]; //key value 0 = email
+    const emailvalue = email.substring(email.indexOf('=') + 1);
+    let user = localStorage.getItem(emailvalue);
+    let userjson = JSON.parse(user);
+    let str = userjson.actions[userjson.actions.length - 3].action + userjson.actions[userjson.actions.length - 3].time;
     return str;
 }
 

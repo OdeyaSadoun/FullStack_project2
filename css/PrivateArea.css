@@ -54,8 +54,17 @@ output{
     font-size:23px;
 }
 
-back_option{
+.back_option{
     height: 3px;
     width: 3px;
     size: 3px;
 }
+
+.div_form{
+ overflow:scroll;
+ size: auto;
+ bottom: 100px;
+ top: 100px;
+ height: 30cm;
+}
+

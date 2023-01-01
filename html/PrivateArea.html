@@ -21,15 +21,14 @@
         <h1 class="hellow">אזור אישי</h1>
     </header>
 
-    
+
     <div class="div_form">
         <h1>הפרטים שלך:</h1>
         <form>
             <ul>
                 <li>
                     <label for="first_name"><b>שם מלא: </b></label>
-                    <output class="text" type="text" id="first_name"
-                        name="first_name" required>
+                    <output class="text" type="text" id="first_name" name="first_name" required>
                 </li>
 
                 <li>
@@ -51,9 +50,23 @@
                     <label for="score"><b>מספר הנקודות שצברת עד כה הוא: </b></label>
                     <output class="text" type="score" id="score" name="score" required>
                 </li>
-                
+
                 <li>
-                    <label for="actions"><b>הפעילות שלך באתר:</b></label>
+                    <label for="actions"><b>שלוש הפעילויות האחרונות שלך באתר הן:</b>
+                        <br>
+                        <label for="actions1"><b> פעילות 1:</b>
+                        </label>
+                    
+                        <output class="text" type="actions1" id="actions1" name="actions1" required></output>
+                        <br>
+                        <label for="actions2"><b> פעילות 2:</b>
+                        </label>
+                     
+                        <output class="text" type="actions2" id="actions2" name="actions2" required></output>
+                        <br>
+                        <label for="actions3"><b> פעילות 3:</b>
+                        </label>
+                        <output class="text" type="actions3" id="actions3" name="actions3" required></output>      
                     <output class="text" type="actions" id="actions" name="actions" required>
                 </li>
             </ul>
@@ -62,23 +75,9 @@
 
 
     <div id="tablearea"></div>
-   
+
     <script src="../js/PrivateArea.js" type="text/javascript" defer></script>
-
-    <p>  
-
-
-
-
-
-
-
-
-
-
-        
-    </p>
-
 </body>
 <footer></footer>
+
 </html>

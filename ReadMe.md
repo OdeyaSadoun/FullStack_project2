@@ -5,6 +5,7 @@ A site that contains games :)
 
 
 ******index.html******
+![Screenshot](index.png)
 The login page, there is an option to connect or register.
 
 ******index.js******

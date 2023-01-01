@@ -22,8 +22,9 @@ function getDetailsForAllUsers() {
     console.log(str);
     return str;
 }
-window.onload = function () {
 
+window.onload = function () {
+    
     let table = document.createElement('table');
     let users = getDetailsForAllUsers();
 
@@ -45,19 +46,19 @@ window.onload = function () {
     tr.appendChild(th2);
     tr.appendChild(th3);
 
-
     table.appendChild(tr); 
     for (let i = 0; i < users.length; i++) {
+       
         let tr = document.createElement('tr');
 
         let td1 = document.createElement('td');
         let td2 = document.createElement('td');
         let td3 = document.createElement('td');
-
+        console.log("לפני הכניסה ");
         let nameUser = document.createTextNode(users[i].name);
         let scoreUser = document.createTextNode(users[i].score);
         let lastAction = document.createTextNode(users[i].actions[users[i].actions.length-1]['action']);
-
+        console.log("אחרי הכניסה");
         td1.appendChild(nameUser);
         td2.appendChild(scoreUser);
         td3.appendChild(lastAction);
@@ -68,9 +69,11 @@ window.onload = function () {
 
 
         table.appendChild(tr);
+       
     }
+    console.log("לפני הכניסה לפונקצייה");
     document.body.appendChild(table);
-
+    console.log("אחרי הכניסה לפונקצייה");
 
     const email = document.cookie.split(';')[0]; //key value 0 = email
     const emailvalue = email.substring(email.indexOf('=') + 1);

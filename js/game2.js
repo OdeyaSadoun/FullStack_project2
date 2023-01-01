@@ -14,22 +14,15 @@ window.onload = function () {
   let userjson = JSON.parse(user);
   document.getElementById('username').innerHTML = "שלום " + userjson.name + "\t ניקוד: " + userjson.score;
 
-  const p = new Promise((resolve, reject) => {
-      resolve();
-    });
-
-
 
   let categories;         // Array of topics
   let chosenCategory;     // Selected catagory
-  // let getHint;          // Word getHint
   let word;              // Selected word
   let guess;             // Geuss
   let geusses = [];      // Stored geusses
   let lives;             // Lives
   let counter;           // Count correct geusses
   let space;              // Number of spaces in word '-'
-  let playGameFinish = false;
 
   // Get elements
   var showLives = document.getElementById("mylives");
@@ -75,9 +68,6 @@ window.onload = function () {
 
     correct = document.createElement('ul');
 
-    console.log(correct);
-
-
     for (var i = 0; i < word.length; i++) {
       correct.setAttribute('id', 'my-word');
       guess = document.createElement('li');
@@ -90,9 +80,6 @@ window.onload = function () {
       }
 
       geusses.push(guess);
-
-      console.log(guess);
-
       wordHolder.appendChild(correct);
       correct.appendChild(guess);
     }
@@ -103,11 +90,8 @@ window.onload = function () {
     showLives.innerHTML = "נשארו לך " + lives + " חיים";
     if (lives < 1) {
       showLives.innerHTML = "סוף המשחק!";
-      console.log("סוףףףףף" + score)
       score = 0;
       addScoreToUser(score);
-      console.log("סופי סופי" + score)
-
     }
     for (var i = 0; i < geusses.length; i++) {
       if (counter + space === geusses.length) {
@@ -121,14 +105,7 @@ window.onload = function () {
   // Animate man
   var animate = function () {
     var drawMe = lives;
-
-    console.log(drawMe);
-
     drawArray[drawMe]();
-
-    console.log(drawArray);
-    console.log(drawArray[drawMe]);
-
   }
 
 
@@ -253,8 +230,6 @@ window.onload = function () {
     canvas();
 
     addActionToUser();
-    // addScoreToUser(score);
-    // console.log('הגענו לכאןן עם ניקוד ' + score);
     return score;
   }
 
@@ -271,26 +246,19 @@ window.onload = function () {
     var hintIndex = chosenCategory.indexOf(word);
     showClue.innerHTML = "רמז: " + hints[catagoryIndex][hintIndex];
     score -= 5;
-    console.log("score: " + score);
   };
 
   // Reset
-
   document.getElementById('reset').onclick = function () {
     correct.parentNode.removeChild(correct);
     letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
-    // p.then(play).then(addScoreToUser);
+    score = 10;
     play();
   }
 
-
-  // p.then(play).then(addScoreToUser);
-  
-  // playGame(addScoreToUser(score));
     play();
-    // addScoreToUser(score);
 }
 
 function addScoreToUser(s) {
@@ -307,7 +275,6 @@ function addActionToUser() {
   const emailvalue = email.substring(email.indexOf('=') + 1);
   let user = localStorage.getItem(emailvalue);
   let userjson = JSON.parse(user);
-  console.log(userjson.actions + userjson.name);
   const enterGameDate = new Date();
   userjson.actions[userjson.counter++] = {time: enterGameDate.toString() , action: "איש תלוי"};
   window.localStorage.setItem(emailvalue, JSON.stringify(userjson));
